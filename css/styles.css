@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
+@import url('quizz.css');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -44,6 +46,7 @@ p {
 }
 .burgermenu {
   font-size: 40px;
+  color: var(--primary-color)
 }
 .banner{
   background-image: linear-gradient(rgba(0, 0, 0, 0.334),rgba(36, 32, 25, 0.602)), url(../img/banner.jpg);

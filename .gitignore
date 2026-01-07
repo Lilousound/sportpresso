@@ -1,0 +1,7 @@
+# Fichiers environnement (clés API)
+.env
+
+# Dossiers et fichiers générés automatiquement
+node_modules/
+.DS_Store
+*.log
