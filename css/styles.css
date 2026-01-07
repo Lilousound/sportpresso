@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,44 +8,71 @@
 
 body {
   height: 100vh;
-  overflow: hidden;    /* masque le défilement */
 }
 
 :root{
-  --title-font: 'Arial, sans-serif';
-  --text-font: 'Helvetica, sans-serif';
-  --primary-color: rgb(110, 64, 30);
-  --secondary-color: rgb(242, 227, 208);
+  --title-font: "Racing Sans One", sans-serif;
+  --text-font: "Reddit Sans", sans-serif;
+  --primary-color: #E2D8CB;
+  --secondary-color: #3E1F0B;
 }
 
 html, body {
   height: 100%;
-  font-size: 22px;
+  font-size: 20px;
 }
-main{
-  width: 90%;
-  padding: 30px;
+body{
+  background-color: var(--primary-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.437),rgba(36, 32, 25, 0.454)), url(../img/background.jpg);
+  background-size: cover;        /* L’image couvre toute la page */
+  background-repeat: no-repeat;  /* Empêche la répétition de l’image */
+  background-position: top right;
+}
+h1 {
+  font-size: 2.4rem;
+}
+h2 {
+  font-size: 1.3rem;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--title-font);
-  color: var(--primary-color);
 }
 p {
   font-family: var(--text-font);
   color: var(--primary-color);
   margin: 20px;
 }
-
-
+.burgermenu {
+  font-size: 40px;
+}
+.banner{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.334),rgba(36, 32, 25, 0.602)), url(../img/banner.jpg);
+  background-size: cover;        /* L’image couvre toute la page */
+  background-repeat: no-repeat;  /* Empêche la répétition de l’image */
+  background-position: center;   /*Centre l’image dans la fenêtre */
+  width: 100%;
+  height: 300px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+.banner-container, .index-container {
+  padding: 20px;
+}
+.sub-title {
+  color: var(--primary-color);
+}
 .get-started {
   margin: 20px auto;
   text-align: center;
+  color: var(--primary-color);
 }
 .button{
   text-decoration: none;
   padding: 15px;
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  font-family: var(--text-font);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
   border-radius: 10px;
+  border: 1px solid var(--primary-color)
 
 }
