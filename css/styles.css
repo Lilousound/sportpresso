@@ -1,0 +1,50 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;    /* masque le défilement */
+}
+
+:root{
+  --title-font: 'Arial, sans-serif';
+  --text-font: 'Helvetica, sans-serif';
+  --primary-color: rgb(110, 64, 30);
+  --secondary-color: rgb(242, 227, 208);
+}
+
+html, body {
+  height: 100%;
+  font-size: 22px;
+}
+main{
+  width: 90%;
+  padding: 30px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--title-font);
+  color: var(--primary-color);
+}
+p {
+  font-family: var(--text-font);
+  color: var(--primary-color);
+  margin: 20px;
+}
+
+
+.get-started {
+  margin: 20px auto;
+  text-align: center;
+}
+.button{
+  text-decoration: none;
+  padding: 15px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 10px;
+
+}
