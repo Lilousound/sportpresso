@@ -3,7 +3,6 @@
 
 // const API_NINJAS_KEY = process.env.API_NINJAS_KEY;
 
-
 const apiUrl = "https://api.api-ninjas.com/v1/caloriesburned";
 
 const options = {
