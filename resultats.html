@@ -11,14 +11,20 @@
   </head>
   	<body>
         <header>
-          <nav>
-
-          </nav>
+          <div class="banner-container">
+              <div class="burger-menu" id="burger-menu">☰</div>
+              <div class="menu" id="menu">
+                <ul>
+                  <li><a href="index.html">Accueil</a></li>
+                  <li><a href="quizz.html">Quizz</a></li>
+                  <li><a href="resultats.html">Résultats</a></li>
+                </ul>
+              </div>
+          </div>
         </header>
 
         <main>
           <div class="resultats-container">
-            <div class="burgermenu">☰</div>
             <div id="resultats">
               <!-- Les résultats de calories sont affichés ici -->
             </div>
@@ -39,13 +45,14 @@
               </div>
             </div> -->
 
-            <h4>Recette pré-entrainement:</h4>
+            <h4>Recette pré-entraînement:</h4>
             <div id="recipe-card-pre"></div>
-            <h4>Recette post-entrainement:</h4>
+            <h4>Recette post-entraînement:</h4>
             <div id="recipe-card-post"></div>
           </div>
         </main>
 
+        <script src="script.js"></script>
         <script src="coffeeRecipes.js"></script>
         <script src="resultats.js"></script>
      </body>
