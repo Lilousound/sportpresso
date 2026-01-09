@@ -30,6 +30,7 @@ body{
   background-size: cover;        /* L’image couvre toute la page */
   background-repeat: no-repeat;  /* Empêche la répétition de l’image */
   background-position: top right;
+  background-attachment: fixed;
 }
 h1 {
   font-size: 2.4rem;

@@ -4,11 +4,13 @@ const calories = params.get('calories');
 const sport = params.get('sport');
 const duration = params.get('duration');
 
-const recipeCard = document.getElementById("recipe-card");
-const recipeName = document.getElementById("recipe-name");
-const recipeCalories = document.getElementById("recipe-calories");
-const recipeIngredients = document.getElementById("recipe-ingredients");
-const recipeImage = document.getElementById("recipe-image");
+const recipeCardPre = document.getElementById("recipe-card-pre");
+const recipeCardPost = document.getElementById("recipe-card-post");
+// const recipeName = document.getElementById("recipe-name");
+// const recipeCalories = document.getElementById("recipe-calories");
+// const recipeIngredients = document.getElementById("recipe-ingredients");
+// const recipeBenefits = document.getElementById("recipe-benefits");
+// const recipeImage = document.getElementById("recipe-image");
 
 
 // Affiche les résultats
@@ -48,8 +50,6 @@ function getSuggestedRecipes(caloriesBurned) {
     preTrainingDrink = preTrainingDrinkAll.filter((drink) => drink.calories <= preMaxCalories);
   }
   const randomPre = Math.floor(Math.random() * preTrainingDrink.length);
-  const selectedPreDrink = preTrainingDrink[randomPre];
-  console.log(selectedPreDrink)
   postTrainingDrink = postTrainingDrinkAll.filter((drink) => drink.calories >= postMinCalories && drink.calories <= postMaxCalories);
   // si n'existe pas return post avec max calories
   if (postTrainingDrink.length === 0) {
@@ -59,12 +59,32 @@ function getSuggestedRecipes(caloriesBurned) {
   console.log(postTrainingDrink[randomPost]);
 
 
-  recipeName.innerHTML = `<h4><strong>${selectedPreDrink.name}</h4></p>`;
-  recipeCalories.innerHTML = `<p>Calories: ${selectedPreDrink.calories}</p>`;
-  recipeIngredients.innerHTML = `<p>Ingredients: ${selectedPreDrink.ingredients.join(", ")}</p>`;
-  recipeImage.setAttribute("src", `${selectedPreDrink.image}`);
-  console.log(recipeImage)
+  // recipeName.innerHTML = `<h4><strong>${selectedPreDrink.name}</h4></p>`;
+  // recipeCalories.innerHTML = `<p>Calories: ${selectedPreDrink.calories}</p>`;
+  // recipeIngredients.innerHTML = `<p>Ingrédients: ${selectedPreDrink.ingredients.join(", ")}</p>`;
+  // recipeBenefits.innerHTML = `<p>Bénéfices: ${selectedPreDrink.benefits}</p>`;
+  // recipeImage.setAttribute("src", `${selectedPreDrink.image}`);
 
+  recipeCardPre.innerHTML += createDrinkCard(preTrainingDrink[randomPre]);
+  recipeCardPre.style.backgroundImage = `url(${preTrainingDrink[randomPre].image})`;
+  recipeCardPost.style.backgroundImage = `url(${postTrainingDrink[randomPost].image})`;
+  recipeCardPost.innerHTML += createDrinkCard(postTrainingDrink[randomPost]);
 }
 
 getSuggestedRecipes(calories);
+
+
+function createDrinkCard(drink) {
+  return `
+              <div class="infos-bkgd">
+                <div class="infos">
+                  <div class="infos-title">
+                    <div class="recipe-name"><strong>${drink.name}</strong></div>
+                    <div class="recipe-calories">${drink.calories} kCal</div>
+                  </div>
+                  <div class="recipe-ingredients">Ingredients: ${drink.ingredients.join(", ")}</div>
+                  <div class="recipe-benefits">Bénéfices: ${drink.benefits}</div>
+                </div>
+              </div>
+            `;
+};
