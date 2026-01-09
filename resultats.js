@@ -6,17 +6,12 @@ const duration = params.get('duration');
 
 const recipeCardPre = document.getElementById("recipe-card-pre");
 const recipeCardPost = document.getElementById("recipe-card-post");
-// const recipeName = document.getElementById("recipe-name");
-// const recipeCalories = document.getElementById("recipe-calories");
-// const recipeIngredients = document.getElementById("recipe-ingredients");
-// const recipeBenefits = document.getElementById("recipe-benefits");
-// const recipeImage = document.getElementById("recipe-image");
 
 
 // Affiche les résultats
 document.getElementById("resultats").innerHTML = `
   <h2>Vous allez brûler environ ${calories}</strong> kcal.</h2>
-  <p>${sport} ${duration}</p>
+  <p><em>${sport} ${duration}</em></p>
 `;
 
 
@@ -58,12 +53,6 @@ function getSuggestedRecipes(caloriesBurned) {
   const randomPost = Math.floor(Math.random() * postTrainingDrink.length);
   console.log(postTrainingDrink[randomPost]);
 
-
-  // recipeName.innerHTML = `<h4><strong>${selectedPreDrink.name}</h4></p>`;
-  // recipeCalories.innerHTML = `<p>Calories: ${selectedPreDrink.calories}</p>`;
-  // recipeIngredients.innerHTML = `<p>Ingrédients: ${selectedPreDrink.ingredients.join(", ")}</p>`;
-  // recipeBenefits.innerHTML = `<p>Bénéfices: ${selectedPreDrink.benefits}</p>`;
-  // recipeImage.setAttribute("src", `${selectedPreDrink.image}`);
 
   recipeCardPre.innerHTML += createDrinkCard(preTrainingDrink[randomPre]);
   recipeCardPre.style.backgroundImage = `url(${preTrainingDrink[randomPre].image})`;
