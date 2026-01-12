@@ -3,6 +3,7 @@
 
 // const API_NINJAS_KEY = process.env.API_NINJAS_KEY;
 
+
 const apiUrl = "https://api.api-ninjas.com/v1/caloriesburned";
 
 const options = {
@@ -42,7 +43,7 @@ async function getCalories() {
   }
 }
 
-caloriesForm.addEventListener("submit", function(event) {
+caloriesForm.addEventListener("submit", function(event) { // écoute le submit du form
   event.preventDefault();
   getCalories();
 

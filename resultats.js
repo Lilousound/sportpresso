@@ -2,16 +2,24 @@
 const params = new URLSearchParams(window.location.search);
 const calories = params.get('calories');
 const sport = params.get('sport');
+const sportLabel = getSportLabel(sport);
 const duration = params.get('duration');
 
 const recipeCardPre = document.getElementById("recipe-card-pre");
 const recipeCardPost = document.getElementById("recipe-card-post");
 
 
+// fonction pour obtenir le label du sport sélectionné
+function getSportLabel(value) {
+  const sport = sports.find(s => s.value === value);
+  return sport ? sport.label : value;
+}
+
 // Affiche les résultats
 document.getElementById("resultats").innerHTML = `
-  <h2>Vous allez brûler environ ${calories}</strong> kcal.</h2>
-  <p><em>${sport} ${duration}</em></p>
+  <p><em>${sportLabel} pendant ${duration} minutes</em></p>
+  <h2>Vous allez brûler environ <u>${calories}</u></strong> kcal.</h2>
+
 `;
 
 
