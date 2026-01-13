@@ -16,7 +16,7 @@ body {
 :root{
   --title-font: "Racing Sans One", sans-serif;
   --text-font: "Reddit Sans", sans-serif;
-  --primary-color: #E2D8CB;
+  --primary-color: #F2E2C4;
   --secondary-color: #3E1F0B;
 }
 
@@ -45,6 +45,13 @@ p {
   font-family: var(--text-font);
   color: var(--primary-color);
   margin: 20px auto;
+}
+.logo {
+  width: 60px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .menu {
   display: flex;

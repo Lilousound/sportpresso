@@ -18,7 +18,7 @@ function getSportLabel(value) {
 // Affiche les résultats
 document.getElementById("resultats").innerHTML = `
   <p><em>${sportLabel} pendant ${duration} minutes</em></p>
-  <h2>Vous allez brûler environ <u>${calories}</u></strong> kcal.</h2>
+  <h2>Tu vas brûler environ <u>${calories}</u></strong> kcal.</h2>
 
 `;
 
@@ -73,15 +73,25 @@ getSuggestedRecipes(calories);
 
 function createDrinkCard(drink) {
   return `
-              <div class="infos-bkgd">
-                <div class="infos">
-                  <div class="infos-title">
-                    <div class="recipe-name"><strong>${drink.name}</strong></div>
-                    <div class="recipe-calories">${drink.calories} kCal</div>
-                  </div>
-                  <div class="recipe-ingredients">Ingredients: ${drink.ingredients.join(", ")}</div>
-                  <div class="recipe-benefits">Bénéfices: ${drink.benefits}</div>
-                </div>
-              </div>
+          <div class="infos card__face--front">
+            <div class="infos-title">
+              <div class="recipe-name"><strong>${drink.name}</strong></div>
+              <div class="recipe-calories"><strong>${drink.calories} kCal</strong></div>
+            </div>
+
+            <div class="recipe-benefits">Bénéfices: ${drink.benefits}</div>
+            <div class="arrow">Voir la recette ➔</div>
+          </div>
+
+          <div class="infos card-face card__face--back">
+            <div class="infos-title">
+              <div class="recipe-name"><strong>${drink.name}</strong></div>
+              <br><br>
+            </div>
+
+            <div class="recipe-ingredients"><em>Ingrédients:</em><br> ${drink.ingredients.join(", ")}</div>
+            <br><br>
+            <div class="recipe-instructions"><em>Instructions:</em><br> ${drink.instructions.join("<br>")}</div>
+          </div>
             `;
 };
