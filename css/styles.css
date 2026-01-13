@@ -26,7 +26,7 @@ html, body {
 }
 body{
   background-color: var(--primary-color);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.437),rgba(36, 32, 25, 0.454)), url(../img/background.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.296),rgba(36, 32, 25, 0.305)), url(../img/background.jpg);
   background-size: cover;        /* L’image couvre toute la page */
   background-repeat: no-repeat;  /* Empêche la répétition de l’image */
   background-position: top right;
@@ -100,13 +100,118 @@ p {
   text-align: center;
   color: var(--primary-color);
 }
+button {
+  appearance: none;
+  all: unset;
+}
+
+/* ? BUTTON */
+@property --c1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #94634b;
+}
+@property --c2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d3baa4;
+}
+@property --c3 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #5b4634;
+}
 .button{
   text-decoration: none;
   padding: 15px;
   font-family: var(--text-font);
   color: var(--primary-color);
-  background-color: var(--secondary-color);
-  border-radius: 10px;
-  border: 1px solid var(--primary-color);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
   cursor: pointer;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: 0px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    to bottom right,
+    var(--c1) 0%,
+    var(--c3) 33%,
+    var(--c2) 62%,
+    var(--c3) 100%
+  );
+  -webkit-mask: linear-gradient(#ffffff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: --c1 300ms ease, --c2 300ms ease, --c3 300ms ease;
+}
+
+.button:hover:before {
+  --c1: #58462e;
+  --c2: #7a573e;
+  --c3: #a8824a;
+}
+.button:active:before {
+  --c1: #525252;
+  --c2: #414141;
+  --c3: #414141;
+}
+
+/* ? CAROUSEL */
+.carousel {
+  margin: 50px auto 0 auto;
+  padding: 20px 0;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  > * {
+    flex: 0 0 40%;  /* Ajuste ce pourcentage pour contrôler le nombre de cartes visibles */
+    }
+    &:hover .group {
+    animation-play-state: paused;
+    }
+  }
+.card {
+  width: 230px;
+  color: var(--primary-color);
+  border-radius: 6px;
+  min-height: 250px;
+  background-size: cover;
+  background-position: bottom;
+}
+.group {
+  display: flex;
+  gap: 25px;
+  padding-right: 20px;
+  will-change: transform;
+  animation: scrolling 30s linear infinite;
+}
+@keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+.infos-card-carousel {
+  width: 230px;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.379);
+  backdrop-filter: blur(20px);
+  margin: auto;
+  padding: 6px;
+  border-radius: 0 0 6px 6px;
+}
+.infos-card-carousel p {
+  margin: 10px 0;
 }

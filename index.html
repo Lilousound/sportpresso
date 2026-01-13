@@ -18,7 +18,7 @@
                 <ul>
                   <li><a href="index.html">Accueil</a></li>
                   <li><a href="quizz.html">Quizz</a></li>
-                  <li><a href="resultats.html">Résultats</a></li>
+                  <!-- <li><a href="resultats.html">Résultats</a></li> -->
                 </ul>
               </div>
               <div class="title"></div>
@@ -37,13 +37,23 @@
             </div>
             <div class="get-started">
               <p>Trouve ta boisson sportive idéale !</p><br>
-              <a href="quizz.html" class="button">C'est parti!</a>
+              <a href="quizz.html" class="button"><strong>C'est parti!</strong></a>
             </div>
 
+            <div class="carousel" id="cards-container">
+              <div class="group" id="group1">
+
+              </div>
+              <!-- Ajoutez `aria-hidden` pour masquer les cartes dupliquées aux lecteurs d'écran. -->
+              <div aria-hidden class="group" id="group2">
+
+              </div>
+            </div>
           </div>
         </main>
 
-
+        <script src="js/coffeeRecipes.js"></script>
+        <script src="js/animCards.js"></script>
         <script src="script.js"></script>
      </body>
 </html>
