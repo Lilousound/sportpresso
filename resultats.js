@@ -19,7 +19,6 @@ function getSportLabel(value) {
 document.getElementById("resultats").innerHTML = `
   <p><em>${sportLabel} pendant ${duration} minutes</em></p>
   <h2>Tu vas brûler environ <u>${calories}</u></strong> kcal.</h2>
-
 `;
 
 
@@ -95,3 +94,12 @@ function createDrinkCard(drink) {
           </div>
             `;
 };
+
+// Flip card des recettes -resultats-
+const recipeCards = document.querySelectorAll('.recipe-card');
+recipeCards.forEach((card) => {
+  card.addEventListener('click', function() {
+    // Applique le toggle UNIQUEMENT à la carte cliquée (this)
+    this.classList.toggle('is-flipped');
+  });
+});
