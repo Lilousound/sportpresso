@@ -2,7 +2,7 @@ const recipesContainer = document.getElementById('recipes-container');
 
 function createRecipeCard(drink) {
   return `
-        <div class="recipe-card" style="background-image: url(${drink.image})">
+        <div class="recipe-card" style="background-image: url(${drink.image})" id="${drink.name}">
           <div class="infos card__face--front">
             <div class="infos-title">
               <div class="recipe-name"><strong>${drink.name}</strong></div>

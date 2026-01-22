@@ -30,3 +30,15 @@ randomRecipes.forEach((recipe) => {
   container.appendChild(card);
   container2.appendChild(card.cloneNode(true));
 });
+
+
+// défilement des recettes aléatoires, au click on va sur la recette
+const cards = document.querySelectorAll('.card');
+cards.forEach((card) => {
+  card.addEventListener('click', () => {
+    const recipeName = card.querySelector('h3').innerText;
+    console.log('Recette cliquée :', recipeName);
+    window.location.href = `recettes.html#${recipeName}`;
+
+  });
+});

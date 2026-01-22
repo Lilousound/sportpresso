@@ -191,6 +191,7 @@ button {
   min-height: 250px;
   background-size: cover;
   background-position: bottom;
+  cursor: pointer;
 }
 .group {
   display: flex;
