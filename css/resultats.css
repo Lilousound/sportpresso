@@ -1,13 +1,14 @@
 .resultats-container {
   padding: 0px 20px 20px 20px;
   color: var(--primary-color);
+  width: 100%;
 }
 .recipe-card {
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
   border-radius: 6px;
-  max-width: 600px;
+  max-width: 500px;
   height: 430px;
   margin: 10px auto 30px;
   background-image: url();
@@ -24,12 +25,13 @@
   font-family: var(--text-font);
   font-size: 0.8rem;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.379);
+  background-color: rgba(0, 0, 0, 0.496);
   position:absolute;
   bottom: 0;
   backdrop-filter: blur(20px);
   border-radius: 0 0 6px 6px;
 }
+
 .infos-title {
   font-size: 1rem;
   margin-bottom: 5px;
@@ -44,8 +46,14 @@
 .recipe-benefits {
   margin: 15px 0 15px;
 }
+.recipe-ingredients, .recipe-instructions {
+  margin-top: 30px;
+}
+#pre-recipe, #post-recipe {
+  text-align: center;
+}
 #post-recipe{
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .card-face {
   position: absolute;
@@ -53,11 +61,12 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
 }
 .card__face--back {
   transform: rotateY(180deg);
-  padding: 0 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 6px;
 }
 .arrow {
   font-size: 15px;
@@ -66,4 +75,9 @@
   bottom: 5px;
   right: 20px;
   opacity: 0.50;
+}
+@-moz-document url-prefix() {
+  .infos {
+  /* filter: blur(4px); Fond plus sombre pour simuler le flou */
+  }
 }
