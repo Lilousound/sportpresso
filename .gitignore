@@ -1,5 +1,6 @@
 # Fichiers environnement (clés API)
 .env
+api.php
 
 # Dossiers et fichiers générés automatiquement
 node_modules/

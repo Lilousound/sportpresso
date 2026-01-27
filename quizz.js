@@ -1,7 +1,4 @@
-// require('dotenv').config();
-// const fetch = require('node-fetch'); // Version 2 de node-fetch
 
-// const API_NINJAS_KEY = process.env.API_NINJAS_KEY;
 
 
 const apiUrl = "https://api.api-ninjas.com/v1/caloriesburned";

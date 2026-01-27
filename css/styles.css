@@ -224,6 +224,36 @@ button {
   margin: 10px 0;
 }
 
+/* ? FOOTER */
+footer {
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 8px;
+  font-family: var(--text-font);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+footer a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+footer img {
+  width: 50px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.title-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+#copyright {
+  font-style: italic;
+}
+
 
 
 /* !Media Queries */
@@ -231,6 +261,18 @@ button {
 @media screen and (min-width: 540px) {
   .recipe-card {
     height: 530px;
+  }
+  .footer-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+  .footer-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    gap: 40px;
   }
 }
 @media screen and (min-width: 720px) {
